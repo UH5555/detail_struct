@@ -66,25 +66,74 @@
 //	return 0;
 //}
 
-struct S1
+//struct S1
+//{
+//	char c1;
+//	int a;
+//	char c2;
+//};
+//
+//struct S2
+//{
+//	char c1;
+//	char c2;
+//	int a;
+//};
+//
+//struct S3
+//{
+//	double d;
+//	char c;
+//	int i;
+//};
+//
+//struct S4
+//{
+//	char c1;
+//	struct S3 s3;
+//	double d;
+//};
+//
+//int main()
+//{
+//	struct S1 s1 = { 0 };
+//	printf("%d\n", sizeof(s1));
+//	struct S2 s2 = { 0 };
+//	printf("%d\n", sizeof(s2));
+//	printf("%d\n", sizeof(struct S3));//16
+//	printf("%d\n", sizeof(struct S4));//32
+//	return 0;
+//}
+
+////设置默认对齐数
+//#pragma pack(4)
+//struct S
+//{
+//	char c1;
+//	double d;
+//};
+//#pragma pack()
+////取消默认对齐数
+//
+//int main()
+//{
+//	printf("%d\n", sizeof(struct S));
+//	return 0;
+//}
+
+struct S
 {
-	char c1;
-	int a;
-	char c2;
+	char c;
+	int i;
+	double d;
 };
 
-struct S2
-{
-	char c1;
-	char c2;
-	int a;
-};
-
+#include <stddef.h>
 int main()
 {
-	struct S1 s1 = { 0 };
-	printf("%d\n", sizeof(s1));
-	struct S2 s2 = { 0 };
-	printf("%d\n", sizeof(s2));
+	//对齐偏移量
+	printf("%d\n", offsetof(struct S, c));
+	printf("%d\n", offsetof(struct S, i));
+	printf("%d\n", offsetof(struct S, d));
 	return 0;
 }
