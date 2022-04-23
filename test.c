@@ -121,19 +121,93 @@
 //	return 0;
 //}
 
-struct S
-{
-	char c;
-	int i;
-	double d;
-};
+//struct S
+//{
+//	char c;
+//	int i;
+//	double d;
+//};
+//
+//#include <stddef.h>
+//int main()
+//{
+//	//对齐偏移量
+//	printf("%d\n", offsetof(struct S, c));
+//	printf("%d\n", offsetof(struct S, i));
+//	printf("%d\n", offsetof(struct S, d));
+//	return 0;
+//}
 
-#include <stddef.h>
-int main()
-{
-	//对齐偏移量
-	printf("%d\n", offsetof(struct S, c));
-	printf("%d\n", offsetof(struct S, i));
-	printf("%d\n", offsetof(struct S, d));
-	return 0;
-}
+//struct S
+//{
+//	int a;
+//	char c;
+//	double d;
+//};
+//
+//void Init(struct S* ps)
+//{
+//	ps->a = 100;
+//	ps->c = 'w';
+//	ps->d = 3.14;
+//}
+//
+////传值
+//void Printf1(struct S tmp)
+//{
+//	printf("%d %c %lf\n", tmp.a, tmp.c, tmp.d);
+//}
+//
+////传址
+//void Printf2(struct S* ps)
+//{
+//	printf("%d %c %lf\n", ps->a, ps->c, ps->d);
+//}
+//
+//int main()
+//{
+//	struct S s;
+//	Init(&s);//传址
+//	Printf1(s);
+//	Printf2(&s);
+//	return 0;
+//}
+
+//位段 - 二进制位
+//
+//struct S
+//{
+//	int _a : 2;//2个比特位
+//	int _b : 5;//5个比特位
+//	int _c : 10;//10个比特位
+//	int _d : 30;//30个比特位
+//};
+//
+////47bit - 6个字节*8 = 48bit
+//
+//
+//int main()
+//{
+//	struct S s;
+//	printf("%d\n", sizeof(s));//8个字节
+//	return 0;
+//}
+
+//struct S
+//{
+//	char a : 3;
+//	char b : 4;
+//	char c : 5;
+//	char d : 4;
+//};
+//
+//int main()
+//{
+//	struct S s={0};
+//	s.a = 10;
+//	s.b = 12;
+//	s.c = 3;
+//	s.d = 4;
+//	printf("%d\n", sizeof(s));
+//	return 0;
+//}
